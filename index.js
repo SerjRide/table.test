@@ -1,18 +1,16 @@
+//Link to the server with JSON data
 const url = 'http://jsonplaceholder.typicode.com/posts';
-
-$(document).ready(() => {
-  setTimeout(() => {
-
-    // Bootstrap js
-    $('#dtBasicExample').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-
-  }, 100);
-});
 
 const getPosts = async (url) => {
   const res = await fetch(url);
   const body = await res.json();
+  $(document).ready(() => {
+
+      // Bootstrap js
+      $('#dtBasicExample').DataTable();
+      $('.dataTables_length').addClass('bs-select');
+
+  });
   return body;
 };
 
